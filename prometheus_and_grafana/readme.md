@@ -58,13 +58,13 @@ API clients interact with Prometheus through its HTTP API to fetch data, query m
 
 - To pre-install Prometheus on a Kubernetes cluster (like Minikube or any other cluster), you first need to have a running Kubernetes cluster
 
-### 🧰 Step 1: Install kube-prometheus-stack
+### Step 1: Install kube-prometheus-stack
 ```bash
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm repo update
 ```
 
-### 🚀 Step 2: Deploy the chart into a new namespace "monitoring"
+### Step 2: Deploy the chart into a new namespace "monitoring"
 ```bash
 kubectl create ns monitoring
 ```
@@ -75,7 +75,7 @@ helm install monitoring prometheus-community/kube-prometheus-stack \
 
 ```
 
-### ✅ Step 3: Verify the Installation
+### Step 3: Verify the Installation
 ```bash
 kubectl get all -n monitoring
 ```
@@ -97,7 +97,7 @@ kubectl --namespace monitoring get secrets monitoring-grafana -o jsonpath="{.dat
 kubectl port-forward service/alertmanager-operated -n monitoring 9093:9093
 ```
 
-### 🧼 Step 4: Clean UP
+### Step 4: Clean UP
 - **Uninstall helm chart**:
 ```bash
 helm uninstall monitoring --namespace monitoring

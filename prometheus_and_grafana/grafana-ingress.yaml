@@ -7,7 +7,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: grafana.com
+    - host: grafana.local
       http:
         paths:
           - path: /
